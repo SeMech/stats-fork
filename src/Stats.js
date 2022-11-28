@@ -76,6 +76,7 @@ var Stats = function () {
 
 			if ( time >= prevTime + 1000 ) {
 
+				console.log(( frames * 1000 ) / ( time - prevTime ), 100)
 				fpsPanel.update( ( frames * 1000 ) / ( time - prevTime ), 100 );
 
 				prevTime = time;
