@@ -2,7 +2,7 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-var Stats = function () {
+var Stats = function (callback = () => {}) {
 
 	var mode = 0;
 
@@ -76,6 +76,7 @@ var Stats = function () {
 
 			if ( time >= prevTime + 1000 ) {
 
+				callback(( frames * 1000 ) / ( time - prevTime ));
 				fpsPanel.update( ( frames * 1000 ) / ( time - prevTime ), 100 );
 
 				prevTime = time;
